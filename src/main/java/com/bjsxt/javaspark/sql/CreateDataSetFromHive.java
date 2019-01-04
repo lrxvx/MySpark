@@ -14,7 +14,9 @@ public class CreateDataSetFromHive {
                 .config("hive.metastore.uris","thrift://c7node1:9083")
                 .enableHiveSupport()
                 .getOrCreate();
-
+        /**
+         * fasdjifsdjhjhjh
+         */
 //        spark.sql("CREATE TABLE IF NOT EXISTS src (key INT, value STRING) USING hive");
 //        spark.sql("LOAD DATA LOCAL INPATH 'examples/src/main/resources/kv1.txt' INTO TABLE src");
         Dataset<Row> sql = spark.sql("SELECT * FROM src");
