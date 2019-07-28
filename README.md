@@ -1,6 +1,6 @@
 ## Hello Spark!
 
-> 这是一个学习Spark学习的代码
+> 用于研究Spark计算的库，可采取Java以及Scala编写
 
 -core
 
