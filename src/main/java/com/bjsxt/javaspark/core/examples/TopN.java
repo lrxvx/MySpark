@@ -31,13 +31,20 @@ public class TopN {
             @Override
             public void call(Tuple2<String, Iterable<Integer>> tp) throws Exception {
                 String className = tp._1;
-                List<Integer> scoreList = IteratorUtils.toList(tp._2.iterator());
-                Collections.sort(scoreList, new Comparator<Integer>() {
+                List scoreList = IteratorUtils.toList(tp._2.iterator());
+//                List<Integer> scoreList = IteratorUtils.toList(tp._2.iterator());
+                scoreList.sort(new Comparator<Integer>() {
                     @Override
                     public int compare(Integer o1, Integer o2) {
-                        return o2-o1;
+                        return o2 - o1;
                     }
                 });
+//                Collections.sort(scoreList, new Comparator<Integer>() {
+//                    @Override
+//                    public int compare(Integer o1, Integer o2) {
+//                        return o2-o1;
+//                    }
+//                });
 
                 if(scoreList.size()>3){
                     System.out.println("className = "+className);
@@ -46,8 +53,8 @@ public class TopN {
                     }
                 }else{
                     System.out.println("className = "+className);
-                    for(int i =0 ;i<scoreList.size();i++){
-                        System.out.println("Socre = "+scoreList.get(i));
+                    for (Object aScoreList : scoreList) {
+                        System.out.println("Socre = " + aScoreList);
                     }
                 }
 
