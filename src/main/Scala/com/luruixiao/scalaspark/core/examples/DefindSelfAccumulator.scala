@@ -104,14 +104,7 @@ object DefindSelfAccumulator {
       myAccumulator.add(info)
       info
     })
-
     transInfo.count()
-
     println(s"accumulator totalCount = ${myAccumulator.value.totalCount}, totalAge = ${myAccumulator.value.totalAge}")
-
-
-
-
-
   }
 }
