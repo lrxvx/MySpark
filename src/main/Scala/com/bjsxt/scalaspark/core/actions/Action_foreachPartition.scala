@@ -9,6 +9,6 @@ object Action_foreachPartition {
     conf.setAppName("foreachPartition")
     val sc = new SparkContext(conf)
     val infos = sc.parallelize(List[String]("a","b","c","d","e","f","g"),4)
-//    infos.foreachAsync()
+    infos.foreach(println)
   }
 }

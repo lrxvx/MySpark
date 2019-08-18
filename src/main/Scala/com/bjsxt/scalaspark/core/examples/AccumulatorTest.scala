@@ -20,10 +20,6 @@ object AccumulatorTest {
       line
     })
     trans.collect()
-
     println(s"accumulator value is ${accumulator.value}")
-
-
-
   }
 }

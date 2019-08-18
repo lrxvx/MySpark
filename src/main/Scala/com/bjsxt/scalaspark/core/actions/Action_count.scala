@@ -11,7 +11,7 @@ object Action_count {
     conf.setAppName("count")
     conf.setMaster("local")
     val sc = new SparkContext(conf)
-    val lines = sc.textFile("./data/sampleData.txt")
+    val lines = sc.textFile("./data/words")
     val result: Long = lines.count()
     println(result)
     sc.stop()
