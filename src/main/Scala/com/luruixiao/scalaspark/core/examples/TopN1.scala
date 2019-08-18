@@ -16,7 +16,7 @@ object TopN1 {
     conf.setAppName("topN")
     val sc = new SparkContext(conf)
     val infos = sc.textFile("./data/scores.txt")
-    val pairInfo = infos.map(one=>{(one.split("\t")(0),one.split("\t")(1).toInt)})
+    val pairInfo = infos.map(one=>{(one.split(" ")(0),one.split(" ")(1).toInt)})
 
     /**
       * 原生排序
@@ -35,12 +35,12 @@ object TopN1 {
     result.foreach(one=>{
       val className = one._1
       val top2Info = new ListBuffer[Int]()
-      if(one._2.size>2){
-        for(i <- 0 to 1){
+      if (one._2.size > 2) {
+        for (i <- 0 to 1) {
           top2Info.+=(one._2(i))
         }
         println(s"className = $className,top2=${top2Info}")
-      }else{
+      } else {
         println(s"className = $className,top2=${one._2}")
       }
 

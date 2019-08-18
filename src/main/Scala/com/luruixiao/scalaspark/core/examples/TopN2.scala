@@ -16,11 +16,10 @@ object TopN2 {
     conf.setAppName("topN")
     val sc = new SparkContext(conf)
     val infos = sc.textFile("./data/scores.txt")
-    val pairInfo = infos.map(one=>{(one.split("\t")(0),one.split("\t")(1).toInt)})
+    val pairInfo = infos.map(one=>{(one.split(" ")(0),one.split(" ")(1).toInt)})
     val result: Array[(String, mutable.Buffer[Int])] = pairInfo.groupByKey().map(tp => {
       val className = tp._1
       val iter = tp._2.iterator
-
       val top3Score = new Array[Int](3)
       val loop = new Breaks
       while (iter.hasNext) {

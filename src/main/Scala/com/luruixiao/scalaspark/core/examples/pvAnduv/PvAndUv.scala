@@ -22,16 +22,15 @@ object PvAndUv {
       val site = tp._1
       val localIterator = tp._2.iterator
       val localMap = mutable.Map[String,Int]()
-      while(localIterator.hasNext){
+      while (localIterator.hasNext) {
         val currentLocal = localIterator.next()
-        if(localMap.contains(currentLocal)){
+        if (localMap.contains(currentLocal)) {
           val count = localMap.get(currentLocal).get+1
           localMap.put(currentLocal,count)
-        }else{
+        } else {
           localMap.put(currentLocal,1)
         }
       }
-
       //对Map 排序
       val newList: List[(String, Int)] = localMap.toList.sortBy(tp=>{-tp._2})
       (site,newList.toBuffer)

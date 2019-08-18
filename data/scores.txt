@@ -1,0 +1,11 @@
+lrx 80
+lrx 90
+zhangsan 74
+wangwu 80
+zhangsan 56
+wangwu 45
+lisi 45
+lisi 56
+lrx 23
+lisi 45
+zhangsan 65
