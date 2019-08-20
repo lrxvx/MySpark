@@ -13,6 +13,7 @@ import org.apache.spark.sql.{DataFrame, Dataset, SparkSession}
 object CreateDataFrameFromJsonDataSet {
   def main(args: Array[String]): Unit = {
     val spark = SparkSession.builder().appName("createDFFromJsonRDD").master("local").getOrCreate()
+    spark.sparkContext.setLogLevel("Error")
     val jsonList = List[String](
       "{\"name\":\"zhangsan\",\"age\":20}",
       "{\"name\":\"lisi\",\"age\":21}",

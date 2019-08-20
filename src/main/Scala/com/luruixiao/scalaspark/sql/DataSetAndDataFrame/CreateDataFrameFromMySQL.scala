@@ -12,7 +12,7 @@ object CreateDataFrameFromMySQL {
     val spark = SparkSession.builder().master("local").appName("createdataframefrommysql")
       .config("spark.sql.shuffle.partitions",1)
       .getOrCreate()
-//    spark.sparkContext.setLogLevel("Error")
+    spark.sparkContext.setLogLevel("Error")
     /**
       * 读取mysql表第一种方式
       */

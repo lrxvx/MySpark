@@ -27,6 +27,7 @@ object CreateDataFrameFromRDDWithReflection {
     val rdd: RDD[String] = spark.sparkContext.textFile("./data/people.txt")
     val personDs: RDD[Person] = rdd.map(one => {
       val arr = one.split(",")
+//      println(arr(0) + " " + arr(1) + " " + arr(2) + arr(3))
       Person(arr(0).toInt, arr(1).toString, arr(2).toInt, arr(3).toDouble)
     })
 
