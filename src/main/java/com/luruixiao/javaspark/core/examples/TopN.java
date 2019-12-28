@@ -13,6 +13,9 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+/**
+ * @author luruixiao
+ */
 public class TopN {
     public static void main(String[] args) {
         SparkConf conf =new SparkConf();
@@ -57,9 +60,7 @@ public class TopN {
                         System.out.println("Socre = " + aScoreList);
                     }
                 }
-
             }
         });
-
     }
 }
