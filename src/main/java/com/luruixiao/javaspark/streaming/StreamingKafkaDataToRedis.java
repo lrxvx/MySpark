@@ -15,6 +15,9 @@ import redis.clients.jedis.JedisPool;
 
 import java.util.*;
 
+/**
+ * @author luruixiao
+ */
 public class StreamingKafkaDataToRedis {
     public static void main(String[] args) throws InterruptedException {
         SparkConf conf = new SparkConf();

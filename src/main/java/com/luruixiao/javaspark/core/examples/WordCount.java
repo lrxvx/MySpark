@@ -9,6 +9,9 @@ import scala.Tuple2;
 
 import java.util.Arrays;
 
+/**
+ * @author luruixiao
+ */
 public class WordCount {
     public static void main(String[] args) {
         SparkConf conf = new SparkConf();
@@ -20,13 +23,11 @@ public class WordCount {
         JavaPairRDD<String, Integer> reduceResult = pairWords.reduceByKey((v1, v2) -> v1 + v2);
         JavaPairRDD<Integer, String> transRDD = reduceResult.mapToPair(tp -> new Tuple2<>(tp._2, tp._1));
         JavaPairRDD<String, Integer> result = transRDD.sortByKey(false).mapToPair(tp -> new Tuple2<>(tp._2, tp._1));
-        /**
+        /*
          * System.out::println 这种方式会报序列化问题，不要使用
          */
-//        result.foreach(System.out::println);
+        result.foreach(System.out::println);
         result.collect().forEach(System.out::println);
-
-
 
 //        JavaRDD<String> words = lines.flatMap((FlatMapFunction<String, String>) line -> Arrays.asList(line.split(" ")).iterator());
 //        JavaPairRDD<String, Integer> pairWords = words.mapToPair((PairFunction<String, String, Integer>) word -> new Tuple2<>(word, 1));

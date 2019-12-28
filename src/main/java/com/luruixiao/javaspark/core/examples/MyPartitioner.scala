@@ -39,8 +39,5 @@ object MyPartitioner {
       list.iterator
     })
     end.collect().foreach(println)
-
-    
-
   }
 }
