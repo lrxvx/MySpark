@@ -4,7 +4,10 @@ import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 
-public class Action_foreach {
+/**
+ * @author luruixiao
+ */
+public class ActionForeach {
     public static void main(String[] args) {
         SparkConf conf = new SparkConf();
         conf.setMaster("local").setAppName("foreach");
